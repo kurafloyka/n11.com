@@ -1,0 +1,128 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 18481049478,
+              "status": "passed"
+            },
+            "match": {
+              "location": "HomePageSteps.setup()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "Validate n11.com Home Page Test",
+        "description": "",
+        "id": "n11.com-applications-test;validate-n11.com-home-page-test",
+        "after": [
+          {
+            "result": {
+              "duration": 883648416,
+              "status": "passed"
+            },
+            "match": {
+              "location": "HomePageSteps.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 89838753,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user opens browser",
+            "match": {
+              "location": "HomePageSteps.user_opens_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3454780513,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on login page",
+            "match": {
+              "location": "HomePageSteps.user_is_on_login_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2987337854,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user enterss username and password",
+            "match": {
+              "location": "HomePageSteps.user_enters_username_and_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 23401,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user clickss on login button",
+            "match": {
+              "location": "HomePageSteps.user_clicks_on_login_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12727,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "home page is displayed",
+            "match": {
+              "location": "HomePageSteps.home_page_is_displayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 13959,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "validate home page title",
+            "match": {
+              "location": "HomePageSteps.validate_home_page_title()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5647391537,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "logout the website",
+            "match": {
+              "location": "HomePageSteps.validate_logged_in_username()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "n11.com Applications Test",
+    "description": "",
+    "id": "n11.com-applications-test",
+    "keyword": "Feature",
+    "uri": "D:/Spring/Spring Projects/CucumberPOM/src/main/java/com/qa/features/n11.feature"
+  }
+]
