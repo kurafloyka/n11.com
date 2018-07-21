@@ -7,12 +7,15 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.AfterClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import com.cucumber.listener.Reporter;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -69,11 +72,17 @@ public class TestBase {
 			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
 		} finally {
 			driver.close();
+
 		}
 
 		System.out.println("closed the browser");
 		driver.quit();
 
+	}
+
+	@AfterClass()
+	public static void writeExtentReport() {
+		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
 	}
 
 }

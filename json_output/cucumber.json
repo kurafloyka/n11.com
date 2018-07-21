@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 8441561662,
+              "duration": 11990957252,
               "status": "passed"
             },
             "match": {
@@ -21,7 +21,7 @@
         "after": [
           {
             "result": {
-              "duration": 3431084046,
+              "duration": 3318483646,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1566209205,
+              "duration": 1404952204,
               "status": "passed"
             },
             "line": 5,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 2703702822,
+              "duration": 5542099317,
               "status": "passed"
             },
             "line": 6,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 2144942614,
+              "duration": 4809791917,
               "error_message": "org.junit.ComparisonFailure: expected:\u003c[enes]\u003e but was:\u003c[FARUK]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat com.qa.stepdefinations.HomePageSteps.validate_logged_in_username(HomePageSteps.java:39)\r\n\tat ✽.Then logout the website(D:/Spring/Spring Projects/CucumberPOM/src/main/java/com/qa/features/n11.feature:7)\r\n",
               "status": "failed"
             },
