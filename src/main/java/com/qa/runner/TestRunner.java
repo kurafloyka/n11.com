@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "D:\\Spring\\Spring Projects\\CucumberPOM\\src\\main\\java\\com\\qa\\features\\n11.feature", glue = {
-		"com/qa/stepdefinations" }, format = { "pretty", "html:test-output",
+		"com/qa/stepdefinations", "com/qa/util" }, format = { "pretty", "html:test-output",
 				"json:json_output/cucumber.json" }, monochrome = true, dryRun = false, strict = true /*
 																										 * tags = {
 																										 * "@End2EndTest, @SmokeTest"

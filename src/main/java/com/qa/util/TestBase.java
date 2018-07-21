@@ -1,20 +1,30 @@
 package com.qa.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
 
-	public TestBase() {
+	@Before
+	public static void initialization() {
 
 		try {
 			prop = new Properties();
@@ -27,9 +37,6 @@ public class TestBase {
 			e.getMessage();
 		}
 
-	}
-
-	public static void initialization() {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
@@ -46,6 +53,26 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
 		driver.get(prop.getProperty("url"));
+
+	}
+
+	@After
+	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+
+		try {
+			if (scenario.isFailed()) {
+
+				final File screenshotss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFileToDirectory(screenshotss, new File("C://screenShot//"));
+			}
+		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
+			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+		} finally {
+			driver.close();
+		}
+
+		System.out.println("closed the browser");
+		driver.quit();
 
 	}
 

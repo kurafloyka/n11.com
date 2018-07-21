@@ -6,11 +6,11 @@
         "before": [
           {
             "result": {
-              "duration": 18481049478,
+              "duration": 8441561662,
               "status": "passed"
             },
             "match": {
-              "location": "HomePageSteps.setup()"
+              "location": "TestBase.initialization()"
             }
           }
         ],
@@ -21,11 +21,11 @@
         "after": [
           {
             "result": {
-              "duration": 883648416,
+              "duration": 3431084046,
               "status": "passed"
             },
             "match": {
-              "location": "HomePageSteps.tearDown()"
+              "location": "TestBase.tearDown(Scenario)"
             }
           }
         ],
@@ -34,22 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 89838753,
+              "duration": 1566209205,
               "status": "passed"
             },
             "line": 5,
-            "name": "user opens browser",
-            "match": {
-              "location": "HomePageSteps.user_opens_browser()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 3454780513,
-              "status": "passed"
-            },
-            "line": 6,
             "name": "user is on login page",
             "match": {
               "location": "HomePageSteps.user_is_on_login_page()"
@@ -58,10 +46,10 @@
           },
           {
             "result": {
-              "duration": 2987337854,
+              "duration": 2703702822,
               "status": "passed"
             },
-            "line": 7,
+            "line": 6,
             "name": "user enterss username and password",
             "match": {
               "location": "HomePageSteps.user_enters_username_and_password()"
@@ -70,46 +58,11 @@
           },
           {
             "result": {
-              "duration": 23401,
-              "status": "passed"
+              "duration": 2144942614,
+              "error_message": "org.junit.ComparisonFailure: expected:\u003c[enes]\u003e but was:\u003c[FARUK]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat com.qa.stepdefinations.HomePageSteps.validate_logged_in_username(HomePageSteps.java:39)\r\n\tat ✽.Then logout the website(D:/Spring/Spring Projects/CucumberPOM/src/main/java/com/qa/features/n11.feature:7)\r\n",
+              "status": "failed"
             },
-            "line": 8,
-            "name": "user clickss on login button",
-            "match": {
-              "location": "HomePageSteps.user_clicks_on_login_button()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 12727,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "home page is displayed",
-            "match": {
-              "location": "HomePageSteps.home_page_is_displayed()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 13959,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "validate home page title",
-            "match": {
-              "location": "HomePageSteps.validate_home_page_title()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 5647391537,
-              "status": "passed"
-            },
-            "line": 11,
+            "line": 7,
             "name": "logout the website",
             "match": {
               "location": "HomePageSteps.validate_logged_in_username()"
