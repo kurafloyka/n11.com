@@ -1,12 +1,13 @@
 package com.qa.runner;
 
-import org.junit.runner.RunWith;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "D:\\Spring\\Spring Projects\\CucumberPOM\\src\\main\\java\\com\\qa\\features\\n11.feature", glue = {
+@CucumberOptions(features = "/Users/sahabt/Documents/n11.com/src/main/java/com/qa/features/n11.feature", glue = {
 		"com/qa/stepdefinations",
 		"com/qa/util" }, format = { "pretty", "html:test-output", "json:json_output/cucumber.json" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter:output/extentReport.html" }, monochrome = true, dryRun = false, strict = true /*

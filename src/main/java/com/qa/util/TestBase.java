@@ -32,7 +32,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream fis = new FileInputStream(
-					"D:\\Spring\\Spring Projects\\CucumberPOM\\src\\main\\java\\com\\qa\\config\\config.properties");
+					"/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/config.properties");
 
 			prop.load(fis);
 
@@ -43,7 +43,7 @@ public class TestBase {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/resources/chromedriver");
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF")) {
 			System.setProperty("webdriver.gecko.driver", "C:\\\\geckodriver.exe");
@@ -66,7 +66,7 @@ public class TestBase {
 			if (scenario.isFailed()) {
 
 				final File screenshotss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFileToDirectory(screenshotss, new File("C://screenShot//"));
+				FileUtils.copyFileToDirectory(screenshotss, new File("/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/screenShot"));
 			}
 		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
 			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
