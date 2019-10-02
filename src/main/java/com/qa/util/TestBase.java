@@ -23,66 +23,66 @@ import cucumber.api.java.Before;
 
 public class TestBase {
 
-	public static WebDriver driver;
-	public static Properties prop;
+    public static WebDriver driver;
+    public static Properties prop;
 
-	@Before
-	public static void initialization() {
+    @Before
+    public static void initialization() {
 
-		try {
-			prop = new Properties();
-			FileInputStream fis = new FileInputStream(
-					"/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/config.properties");
+        try {
+            prop = new Properties();
+            FileInputStream fis = new FileInputStream(
+                    System.getProperty("user.dir") +"/src/main/java/com/qa/config/config.properties");
 
-			prop.load(fis);
+            prop.load(fis);
 
-		} catch (IOException e) {
-			e.getMessage();
-		}
+        } catch (IOException e) {
+            e.getMessage();
+        }
 
-		String browserName = prop.getProperty("browser");
+        String browserName = prop.getProperty("browser");
 
-		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/resources/chromedriver");
-			driver = new ChromeDriver();
-		} else if (browserName.equals("FF")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\\\geckodriver.exe");
-			driver = new FirefoxDriver();
-		}
+        if (browserName.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +"/src/main/java/com/qa/config/resources/chromedriver");
+            driver = new ChromeDriver();
+        } else if (browserName.equals("FF")) {
+            System.setProperty("webdriver.gecko.driver", "C:\\\\geckodriver.exe");
+            driver = new FirefoxDriver();
+        }
 
-		// driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+        // driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
-		driver.get(prop.getProperty("url"));
+        driver.get(prop.getProperty("url"));
 
-	}
+    }
 
-	@After
-	public void tearDown(Scenario scenario) throws InterruptedException, IOException {
+    @After
+    public void tearDown(Scenario scenario) throws InterruptedException, IOException {
 
-		try {
-			if (scenario.isFailed()) {
+        try {
+            if (scenario.isFailed()) {
 
-				final File screenshotss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFileToDirectory(screenshotss, new File("/Users/sahabt/Documents/n11.com/src/main/java/com/qa/config/screenShot"));
-			}
-		} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-			System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-		} finally {
-			driver.close();
+                final File screenshotss = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+                FileUtils.copyFileToDirectory(screenshotss, new File(System.getProperty("user.dir") + "/src/main/java/com/qa/config/screenShot"));
+            }
+        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
+            System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+        } finally {
+            driver.close();
 
-		}
+        }
 
-		System.out.println("closed the browser");
-		driver.quit();
+        System.out.println("closed the browser");
+        driver.quit();
 
-	}
+    }
 
-	@AfterClass()
-	public static void writeExtentReport() {
-		Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
-	}
+    @AfterClass()
+    public static void writeExtentReport() {
+        Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
+    }
 
 }
