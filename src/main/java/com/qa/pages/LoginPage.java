@@ -8,7 +8,6 @@ import com.qa.util.TestBase;
 
 public class LoginPage extends TestBase {
 
-	// *[@id=\"header\"]/div/div/div[2]/div[2]/div[2]/div/div/a[1]
 
 	@FindBy(xpath = "//*[@id=\"header\"]/div/div/div[2]/div[2]/div[2]/div/div/a[1]")
 	WebElement account;

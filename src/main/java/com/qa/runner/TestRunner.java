@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "/Users/sahabt/Documents/n11.com/src/main/java/com/qa/features/n11.feature", glue = {
+@CucumberOptions(features = "/Users/mymac/Downloads/n11.com/src/main/java/com/qa/features/", glue = {
 		"com/qa/stepdefinations",
 		"com/qa/util" }, format = { "pretty", "html:test-output", "json:json_output/cucumber.json" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter:output/extentReport.html" }, monochrome = true, dryRun = false, strict = true /*
